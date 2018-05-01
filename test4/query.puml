@@ -1,8 +1,0 @@
-@startuml
-hide footbox
-actor 读者
-
-读者 -> 图书:查看图书信息
-图书 -> 借阅记录:查询借阅信息
-借阅记录 --> 读者:返回借阅信息
-@enduml
