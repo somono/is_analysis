@@ -1,0 +1,13 @@
+@startuml
+
+title 选择学期用例的顺序图
+
+actor user
+
+user -> controller:getUserTerms
+
+controller->user:该用户的全部学期集合
+
+
+
+@enduml

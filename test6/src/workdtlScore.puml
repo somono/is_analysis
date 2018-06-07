@@ -1,0 +1,25 @@
+@startuml
+title 学生实验具体得分的顺序图
+
+actor users
+
+Users-->Term:先选择学期
+
+Term-->Subject:选择课程
+
+Subject -> students: 查看所有学生列表
+
+alt 如果users是老师或学生
+
+	students -> grades
+
+	grades -> tests
+
+	tests --> users:老师显示每个学生的信息、及每个实验的各项得分，学生只显示自己得分
+
+else 如果users是游客
+
+    students --> users:每个学生的信息
+
+end
+@enduml

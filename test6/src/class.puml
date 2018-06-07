@@ -1,0 +1,120 @@
+@startuml
+class users {
+
+    <b>user_id</b> （用户ID）
+
+    user_name （用户真实姓名）
+
+    github_username （用户GitHub账号）
+
+    update_date （用户GitHub账号修改日期）
+
+    password （用户密码）
+   
+}
+class teachers{
+
+    <b>teacher_id</b> （老师工号）
+
+    department （老师所属部门）
+
+    teach_term（授课学期）
+
+    teach_course（教授课程）
+
+    test_sum （已发布的作业ID集合）
+
+}
+
+class students{
+
+    <b>student_id</b> （学号）
+
+    class_id （班级）
+
+    result_sum（成绩汇总）
+   
+    choose_term（所选学期）
+
+    choose_course（所选学科）
+
+}
+
+class classes{
+
+    <b>class_id</b> （班级编号）
+
+    className （班级名称）
+
+    students（学生集合）
+
+    
+
+}
+
+users <|-down-- students
+
+users <|-down-- teachers
+
+classes "1" -right- "n" students
+
+class term{
+
+    <b>term_id</b> （学期号）
+
+    term_name（学期名称）
+
+}
+
+class course{
+
+    <b>course_id</b> （课程编号）
+
+    course_name（课程名称）
+
+}
+
+class score {
+
+    <b>student_id</b> （学号）
+
+    <b>test_id</b> （实验编号）
+
+    eachScore（每项得分）
+
+    score_sub （总分数）
+
+    remark （评价）
+
+    update_date （评改日期）
+
+}
+
+
+
+class tests {
+
+    <b>test_id</b> （实验编号）
+
+    test_title （实验名称）
+
+    term_id （学期编号）
+
+    test_link （实验github链接）
+
+}
+
+students "n" -- "n"term
+
+students "1" -down- "n"score
+
+teachers "n" -- "n" term
+
+term "n" -- "n" course
+
+course "1" -left- "n" tests
+
+course "1" -left- "n" score
+
+score "n" -- "1" tests
+@enduml

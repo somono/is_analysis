@@ -1,0 +1,9 @@
+@startuml
+title 选择课程的顺序图
+
+actor Users
+
+Users-->Term:先选择学期
+
+Term-->Course:选择学期之后也需要选择课程
+@enduml

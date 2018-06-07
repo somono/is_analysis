@@ -1,0 +1,21 @@
+@startuml
+title 老师实验评分用例的顺序图
+
+actor users
+
+users-->Term:先选择学期
+
+Term-->Course:选择课程
+
+Course -> Teacher
+
+Teacher-->tests
+
+tests-->student:连接学生表找打实验的学生
+
+student-->users:返回每个班级里面的学生
+
+users --> scores:老师给学生打分
+
+scores --> users:返回成功信息
+@enduml

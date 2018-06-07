@@ -1,0 +1,34 @@
+# “选择学期”用例 [返回](../README.md)
+## 1. 用例规约
+
+
+|用例名称|选择学期|
+|-------|:-------------|
+|功能|用户登录之后首先选择学期|
+|参与者|学生，老师|
+|前置条件|学生，老师需要先登录|
+|后置条件| |
+|主流事件| |
+|备注| |
+
+## 2. 业务流程（顺序图） [源码](../src/chooseTerm.puml)
+![](../img/chooseTerm.png) 
+
+## 3. 界面设计
+- 界面参照: https://somono.github.io/is_analysis/test6/ui/chooseterm.html
+- API接口
+    - 接口1：[getUserTerm](../api/getUserTerms.md) 
+
+
+
+## 4. 算法描述（活动图）
+
+- 学生用户CHOOSE_TERM(老师用户TEACH_TERM)解析为卡片块。
+- CHOOSE_TERM为唯一返回值，返回值为数组，数组元素为学期名称，前台直接根据元素进行UI显示。
+
+## 5. 参照表
+
+- [STUDENTS](../数据库设计.md/#STUDENTS)
+- [TEACHERS](../数据库设计.md/#TEACHERS)
+- [TERM](../数据库设计.md/#TERM)
+

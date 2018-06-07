@@ -1,0 +1,15 @@
+@startuml
+title 学生实验列表用例的顺序图
+
+actor users
+
+users-->Term:先选择学期
+
+Term-->course:选择课程
+
+course->student
+
+student -> test:综合确定实验
+
+test-->users:返回该课程所有实验
+@enduml

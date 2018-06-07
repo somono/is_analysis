@@ -1,0 +1,17 @@
+@startuml
+
+title 老师添加实验的顺序图
+
+actor users
+
+users-->Term:先选择学期
+
+Term-->Course:选择课程
+
+Course -> Teacher
+
+Teacher-->tests 
+
+tests-->users:返回以发布的作业信息
+
+@enduml
